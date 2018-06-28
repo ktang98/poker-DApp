@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poker DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body class="container">
+  <h1>Simple Poker Transaction DApp</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Bets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sai</td>
+          <td id="player-1"></td>
+        </tr>
+        <tr>
+          <td>Kevin</td>
+          <td id="player-2"></td>
+        </tr>
+        <tr>
+          <td>Arno</td>
+          <td id="player-3"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="totalPot table">
+      <thead>
+        <th>Total Pot</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="total-pot"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <input type="text" id="player" />
+  <!-- href just allows the click to lead to an action -->
+  <a href="#" onclick="playerBet()" class="btn btn-primary">Bet</a>
+  <a href="#" onclick="playerCall()" class="btn btn-primary">Call</a>
+  <a href="#" onclick="playerFold()" class="btn btn-primary">Fold</a>
+  <a href="#" onclick="playerCheck()" class="btn btn-primary">Check</a>
+  <a href="#" onclick="clearPlayerBet()" class="btn btn-primary">Clear Player Bet</a>
+  <a href="#" onclick="clearPot()" class="btn btn-primary">End Round</a>
+  <div class="instructions">
+    <br>
+    <p><b>Instructions</b></p>
+    <p>1. Begin a round</p>
+    <p>2. Keep track of bets</p>
+    <p>3. Clear each person INDIVIDUALLY after end round</p>
+
+  </div>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="./index.js"></script>
+</html>
