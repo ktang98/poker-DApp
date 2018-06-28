@@ -20,6 +20,7 @@ contract Poker {
   //bytes32[] public playerListCopy;
   uint8 public totalPot;
   uint8 public highestBet;
+  uint8 public maxBetAmount;
 
   /* This is the constructor which will be called once when you
   deploy the contract to the blockchain. When we deploy the contract,
@@ -29,6 +30,7 @@ contract Poker {
     playerList = playerNames;
     totalPot = 0;
     highestBet = 0;
+    maxBetAmount = 100;
     //playerListCopy = copyArray(playerNames);
   }
 
@@ -45,10 +47,12 @@ contract Poker {
 
   // This function increments the bet for the specified player. This
   // is equivalent to casting a bet
-  function playerBet(bytes32 player) public {
+  function playerBet(bytes32 player, uint8 betAmount) public {
     require(validPlayer(player));
-    betsPlaced[player] += 1;
-    totalPot += 1;
+    if (betAmount <= maxBetAmount) {
+      betsPlaced[player] += betAmount;
+      totalPot += betAmount;
+    }
     if (betsPlaced[player] > highestBet) {
       highestBet = betsPlaced[player];
     }

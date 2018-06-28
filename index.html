@@ -41,13 +41,16 @@
       </tbody>
     </table>
   </div>
-  <input type="text" id="player" />
-  <!-- href just allows the click to lead to an action -->
-  <a href="#" onclick="playerBet()" class="btn btn-primary">Bet</a>
+  <input type="text" id="player" placeholder="Player's name"/>
   <a href="#" onclick="playerCall()" class="btn btn-primary">Call</a>
   <a href="#" onclick="playerFold()" class="btn btn-primary">Fold</a>
   <a href="#" onclick="playerCheck()" class="btn btn-primary">Check</a>
   <a href="#" onclick="clearPlayerBet()" class="btn btn-primary">Clear Player Bet</a>
+  <br> <br>
+  <input type="number" id="bet-amount" placeholder="Amount to Bet" />
+  <!-- href just allows the click to lead to an action -->
+  <a href="#" onclick="playerBet()" class="btn btn-primary">Bet</a>
+  <br><br>
   <a href="#" onclick="clearPot()" class="btn btn-primary">End Round</a>
   <div class="instructions">
     <br>
